@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">R6 DMG Tracker</string>
+    <string name="spinner_text">Choose here</string>
+    <string name="header_desc">weapon icon</string>
+    <string name="feedback">Feedback</string>
+    <string name="help">Send Feedback</string>
+    <string name="email_text">"Dear Guido,\n" +
+                    "\n" +
+                    "I recently used your app and wanted to share some feedback with you. I have been a user for [time period] and overall, I have had a [positive/negative] experience with the app.\n" +
+                    "\n" +
+                    "Here are a few things I would like to highlight:\n" +
+                    "\n" +
+                    "[Insert feedback or suggestion here]\n" +
+                    "[Insert feedback or suggestion here]\n" +
+                    "[Insert feedback or suggestion here]\n" +
+                    "I believe these changes would greatly improve the user experience and make the app even more enjoyable to use.\n" +
+                    "\n" +
+                    "Thank you for taking the time to read my feedback. I look forward to your continued efforts to enhance the app.\n" +
+                    "\n" +
+                    "Best regards,\n" +
+                    "[Your Name]"</string>
+    <string name="type">Type</string>
+    <string name="damage">Damage</string>
+    <string name="health1">●◌◌</string>
+    <string name="health2">●●◌</string>
+    <string name="health3">●●●</string>
+    <string name="shots_to_kill">Shots to Kill</string>
+    <string name="rate_of_fire">Rate of Fire</string>
+    <string name="rof_value">0</string>
+    <string name="type_value"></string>
+    <string name="dmg_value">0</string>
+    <string name="stk1_value">0</string>
+    <string name="stk2_value">0</string>
+    <string name="stk3_value">0</string>
+    <string name="operators">Operators</string>
+    <string name="ops_values"></string>
+    <string name="weapon_img_description">weapon icon</string>
+</resources>
