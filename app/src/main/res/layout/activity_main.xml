@@ -16,8 +16,8 @@
         android:contentDescription="@string/weapon_img_description"
         android:scaleType="centerCrop"
         ads:srcCompat="@drawable/bg"
-        tools:layout_editor_absoluteX="-40dp"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteX="-194dp"
+        tools:layout_editor_absoluteY="-16dp" />
 
     <ImageView
         android:id="@+id/gunImg"

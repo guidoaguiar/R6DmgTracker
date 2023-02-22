@@ -2,7 +2,6 @@ package com.don.r6dmgtracker
 
 
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
 import android.net.ConnectivityManager
@@ -27,7 +26,6 @@ import com.google.android.gms.ads.MobileAds
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import kotlin.math.ceil
@@ -36,6 +34,7 @@ import kotlin.math.ceil
 lateinit var mAdView : AdView
 
 class MainActivity : AppCompatActivity() {
+    
 
     fun stkcalc(dmg: Int, health: Int): Int {
         val calc = ceil(((health / dmg).toDouble()))
@@ -44,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         return result
     }
 
-    fun sendFeedback() {
+    private fun sendFeedback() {
         /*ACTION_SEND action to launch an email client installed on your Android device.*/
         val mIntent = Intent(Intent.ACTION_SEND)
         /*To send an email you need to specify mailto: as URI using setData() method
@@ -84,7 +83,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    val retrofit by lazy {
+    private val retrofit: JsonAPI by lazy {
         Retrofit.Builder()
             .baseUrl("https://guidoaguiar.github.io/")
             .addConverterFactory( GsonConverterFactory.create() )
@@ -108,10 +107,10 @@ class MainActivity : AppCompatActivity() {
     ): View? {
 
         if (parent?.parent is FrameLayout) {
-            (parent?.parent as View).setBackgroundColor(Color.parseColor("#262626"))
+            (parent.parent as View).setBackgroundColor(Color.parseColor("#262626"))
         }
 
-        return super.onCreateView(parent, name, context!!, attrs)
+        return super.onCreateView(parent, name, context, attrs)
 
     }
 
@@ -129,7 +128,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
 
         val spinner: Spinner = binding.spinner
 // Create an ArrayAdapter using the string array and a default spinner layout
@@ -191,19 +189,20 @@ class MainActivity : AppCompatActivity() {
                                 binding.typetxt.text = each.type
                                 binding.newdmgText.text = each.dmg.toString()
                                 binding.rofText.text = each.rof.toString()
-                                var dmg = each.dmg
+                                val dmg = each.dmg
                                 binding.stk1Text.text = stkcalc(dmg, 100).toString()
                                 binding.stk2Text.text = stkcalc(dmg, 110).toString()
                                 binding.stk3Text.text = stkcalc(dmg, 125).toString()
                                 binding.operatorsTxt.text = each.operators
-                                var gunPng = each.filename
-
+                                val gunPng = each.filename
+                                
                                 val res = resources
                                 val resID = res.getIdentifier(
                                     gunPng,
                                     "drawable",
                                     packageName
                                 )
+
                                 binding.gunImg.setImageDrawable(
                                     ContextCompat.getDrawable(
                                         this@MainActivity,

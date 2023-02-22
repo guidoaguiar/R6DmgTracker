@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "211334388059",
+    "project_id": "r6-dmg-tracker",
+    "storage_bucket": "r6-dmg-tracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211334388059:android:050998de32a02c346ea27e",
+        "android_client_info": {
+          "package_name": "com.don.r6dmgtracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "211334388059-5dsflak0hd8qpeohnpbbfaaq4i9ee3r2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWGGyxfjvmEHO_1D4_meyGOuxdjG_3YgY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "211334388059-5dsflak0hd8qpeohnpbbfaaq4i9ee3r2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
