@@ -27,12 +27,12 @@
     <string name="shots_to_kill">Shots to Kill</string>
     <string name="rate_of_fire">Rate of Fire</string>
     <string name="rof_value">0</string>
-    <string name="type_value"></string>
+    <string name="type_value">---</string>
     <string name="dmg_value">0</string>
     <string name="stk1_value">0</string>
     <string name="stk2_value">0</string>
     <string name="stk3_value">0</string>
     <string name="operators">Operators</string>
-    <string name="ops_values"></string>
+    <string name="ops_values">---</string>
     <string name="weapon_img_description">weapon icon</string>
 </resources>

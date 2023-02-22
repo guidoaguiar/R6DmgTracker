@@ -31,7 +31,7 @@
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintTop_toTopOf="parent"
-         />
+        ads:srcCompat="@drawable/choose" />
 
     <Spinner
         android:id="@+id/spinner"
@@ -65,18 +65,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/type"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         ads:layout_constraintBottom_toTopOf="@+id/textView7"
         ads:layout_constraintEnd_toEndOf="@+id/textView7"
         ads:layout_constraintTop_toTopOf="@+id/divider" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/typetxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="@string/type_value"
+        android:textSize="14sp"
         ads:layout_constraintBottom_toBottomOf="@+id/textView5"
         ads:layout_constraintStart_toEndOf="@+id/divider"
         ads:layout_constraintTop_toTopOf="@+id/textView5" />
@@ -86,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/rate_of_fire"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         ads:layout_constraintBottom_toTopOf="@+id/textView9"
         ads:layout_constraintEnd_toEndOf="@+id/textView9"
@@ -98,7 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="@string/rof_value"
-        android:textSize="12sp"
+        android:textSize="14sp"
         ads:layout_constraintBottom_toBottomOf="@+id/textView7"
         ads:layout_constraintStart_toEndOf="@+id/divider"
         ads:layout_constraintTop_toTopOf="@+id/textView7" />
@@ -108,7 +109,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/damage"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         ads:layout_constraintBottom_toTopOf="@+id/textView"
         ads:layout_constraintEnd_toEndOf="@+id/textView"
@@ -120,7 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="@string/dmg_value"
-        android:textSize="12sp"
+        android:textSize="14sp"
         ads:layout_constraintBottom_toBottomOf="@+id/textView9"
         ads:layout_constraintStart_toEndOf="@+id/divider"
         ads:layout_constraintTop_toTopOf="@+id/textView9" />
@@ -130,7 +131,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/shots_to_kill"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         ads:layout_constraintBottom_toTopOf="@+id/textView2"
         ads:layout_constraintEnd_toEndOf="@+id/textView2"
@@ -141,7 +142,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/health1"
-        android:textSize="12sp"
+        android:textSize="14sp"
         ads:layout_constraintBottom_toTopOf="@+id/textView3"
         ads:layout_constraintEnd_toEndOf="@+id/textView3"
         ads:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -152,7 +153,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="@string/stk1_value"
-        android:textSize="12sp"
+        android:textSize="14sp"
         ads:layout_constraintBottom_toBottomOf="@+id/textView2"
         ads:layout_constraintStart_toEndOf="@+id/divider"
         ads:layout_constraintTop_toTopOf="@+id/textView2"
@@ -174,7 +175,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="@string/stk2_value"
-        android:textSize="12sp"
+        android:textSize="14sp"
         ads:layout_constraintBottom_toBottomOf="@+id/textView3"
         ads:layout_constraintStart_toEndOf="@+id/divider"
         ads:layout_constraintTop_toTopOf="@+id/textView3" />
@@ -185,7 +186,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:text="@string/health3"
-        android:textSize="12sp"
+        android:textSize="14sp"
         ads:layout_constraintBottom_toTopOf="@+id/textView14"
         ads:layout_constraintEnd_toStartOf="@+id/divider"
         ads:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -196,7 +197,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="@string/stk3_value"
-        android:textSize="12sp"
+        android:textSize="14sp"
         ads:layout_constraintBottom_toBottomOf="@+id/textView4"
         ads:layout_constraintStart_toEndOf="@+id/divider"
         ads:layout_constraintTop_toTopOf="@+id/textView4" />
@@ -207,20 +208,20 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:text="@string/operators"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         ads:layout_constraintBottom_toBottomOf="@+id/divider"
         ads:layout_constraintEnd_toStartOf="@+id/divider"
         ads:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/operatorsTxt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:text="@string/ops_values"
-        android:textSize="12sp"
+        android:textSize="14sp"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toEndOf="@+id/divider"
         ads:layout_constraintTop_toTopOf="@+id/textView14" />
@@ -228,9 +229,9 @@
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-3553351498831631/6096344331"
         app:layout_constraintBottom_toBottomOf="parent"

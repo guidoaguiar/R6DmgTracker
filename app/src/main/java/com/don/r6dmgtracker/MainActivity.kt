@@ -2,6 +2,7 @@ package com.don.r6dmgtracker
 
 
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
 import android.net.ConnectivityManager
@@ -18,6 +19,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.don.r6dmgtracker.data.JsonAPI
+import com.don.r6dmgtracker.data.WeaponList
 import com.don.r6dmgtracker.databinding.ActivityMainBinding
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
@@ -153,9 +155,28 @@ class MainActivity : AppCompatActivity() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Network Connection")
         builder.setMessage("the app currently needs internet to retrieve the info from database. Please connect to internet and try again.")
-//builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
 
+        var list = emptyList<WeaponList>()
 
+        fun isConnected() {
+            if (isNetworkConnected()) {
+                CoroutineScope(Dispatchers.IO).launch {
+                    val replyFromJson = retrofit.retrieveWeaponList() //Response: List
+
+                    if (replyFromJson.isSuccessful) {
+                        //Deu certo
+                        list = replyFromJson.body()!!
+                    }
+                }
+            } else {
+                builder.show()
+            }
+        }
+        builder.setOnDismissListener {isConnected()}
+       /* builder.setPositiveButton("OK") { dialog, which ->
+            isConnected()
+        }*/
+        isConnected()
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 //Do nothing
@@ -163,52 +184,52 @@ class MainActivity : AppCompatActivity() {
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val selectedWeapon = parent?.getItemAtPosition(position).toString()
+                if (list.isNotEmpty()) {
+                    for (each in list) {
+                        if (each.gun == selectedWeapon) {
+                            CoroutineScope(Dispatchers.Main).launch {
+                                binding.typetxt.text = each.type
+                                binding.newdmgText.text = each.dmg.toString()
+                                binding.rofText.text = each.rof.toString()
+                                var dmg = each.dmg
+                                binding.stk1Text.text = stkcalc(dmg, 100).toString()
+                                binding.stk2Text.text = stkcalc(dmg, 110).toString()
+                                binding.stk3Text.text = stkcalc(dmg, 125).toString()
+                                binding.operatorsTxt.text = each.operators
+                                var gunPng = each.filename
 
-                if (isNetworkConnected()) {
-                    CoroutineScope(Dispatchers.IO).launch {
-                        val replyFromJson = retrofit.retrieveWeaponList() //Response: List
-
-                        if (replyFromJson.isSuccessful) {
-                            //Deu certo
-                            val list = replyFromJson.body()
-
-                            if (list != null) {
-                                for (each in list) {
-                                    if (each.gun == selectedWeapon) {
-                                        withContext(Dispatchers.Main) {
-                                            binding.newdmgText.text = each.newdmg.toString()
-                                            binding.rofText.text = each.rof.toString()
-                                            var dmg = each.newdmg
-                                            binding.stk1Text.text = stkcalc(dmg, 100).toString()
-                                            binding.stk2Text.text = stkcalc(dmg, 110).toString()
-                                            binding.stk3Text.text = stkcalc(dmg, 125).toString()
-                                            var gunPng = "_" + each.gun
-                                                .lowercase()
-                                                .replace('-', '_', ignoreCase = true)
-                                                .replace(' ', '_', ignoreCase = true)
-
-
-                                            val res = getResources()
-                                            val resID = res.getIdentifier(
-                                                gunPng,
-                                                "drawable",
-                                                getPackageName()
-                                            )
-                                            binding.gunImg.setImageDrawable(
-                                                ContextCompat.getDrawable(
-                                                    this@MainActivity,
-                                                    resID
-                                                )
-                                            )
-                                        }
-                                        break
-                                    }
-                                }
+                                val res = resources
+                                val resID = res.getIdentifier(
+                                    gunPng,
+                                    "drawable",
+                                    packageName
+                                )
+                                binding.gunImg.setImageDrawable(
+                                    ContextCompat.getDrawable(
+                                        this@MainActivity,
+                                        resID
+                                    )
+                                )
+                            }
+                            break
+                        }else if (selectedWeapon == "Choose"){
+                            CoroutineScope(Dispatchers.Main).launch {
+                                binding.typetxt.text = "---"
+                                binding.rofText.text = "0"
+                                binding.newdmgText.text = "0"
+                                binding.stk1Text.text = "0"
+                                binding.stk2Text.text = "0"
+                                binding.stk3Text.text = "0"
+                                binding.operatorsTxt.text = "---"
+                                binding.gunImg.setImageDrawable(
+                                    ContextCompat.getDrawable(
+                                        this@MainActivity, R.drawable.choose)
+                                )
                             }
                         }
                     }
-                }else {
-                    builder.show()
+                } else {
+                    isConnected()
                 }
 
             }

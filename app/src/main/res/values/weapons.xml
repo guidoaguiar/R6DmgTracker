@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="weapons">
-        <item>Search</item>
-        <item>FMG9</item>
-        <item>MP5K</item>
-        <item>MAC 11</item>
+        <item>Choose</item>
+        <item>R4-C</item>
         <item>G36C</item>
-        <item>R4C</item>
-        <item>UMP45</item>
-        <item>Famas</item>
-        <item>MP5</item>
-        <item>P90</item>
-        <item>PP-19 Vityaz</item>
+        <item>F2</item>
         <item>552 Commando</item>
-        <item>416C</item>
-        <item>MP7</item>
-        <item>C8SFW</item>
-        <item>C1A1</item>
+        <item>416-C</item>
+        <item>C8-SFW</item>
         <item>Mk17 CQB</item>
-        <item>MPX</item>
-        <item>Parafal</item>
-        <item>M12</item>
-        <item>Bearing 9</item>
-        <item>PDW9</item>
-        <item>Vector</item>
-        <item>T5</item>
-        <item>K1A</item>
-        <item>Spear</item>
-        <item>Mx4</item>
+        <item>PARA-308</item>
+        <item>Spear .308</item>
         <item>M4</item>
-        <item>SMG 9</item>
-        <item>Aug A3</item>
         <item>F90</item>
-        <item>Commando 9</item>
-        <item>RONI</item>
         <item>SC3000K</item>
+        <item>POF-9</item>
+        <item>FMG-9</item>
+        <item>MP5K</item>
+        <item>UMP45</item>
+        <item>P90</item>
+        <item>MP5</item>
+        <item>9x19VSN</item>
+        <item>MP7</item>
+        <item>9mm C1</item>
+        <item>MPX</item>
+        <item>M12</item>
+        <item>PDW9</item>
+        <item>Vector .45 ACP</item>
+        <item>T-5 SMG</item>
+        <item>K1A</item>
+        <item>Mx4 Storm</item>
+        <item>AUG A3</item>
+        <item>Commando 9</item>
+        <item>P10 RONI</item>
         <item>UZK50GI</item>
-        <item>POF9</item>
+        <item>SMG-11</item>
+        <item>Bearing 9</item>
+        <item>SPSMG9</item>
     </string-array>
 </resources>
